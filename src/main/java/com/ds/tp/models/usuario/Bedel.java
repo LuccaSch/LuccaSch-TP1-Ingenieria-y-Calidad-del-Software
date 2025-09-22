@@ -77,7 +77,7 @@ public class Bedel extends Usuario{
         return "BEDEL {Id: " + id +
                     ", Usuario: "+usuario+
                     ", Nombre: " + nombre + 
-                    ", Apellido "+apellido+
+                    ", Apellido: " + apellido +
                     "}";
     }
 }
