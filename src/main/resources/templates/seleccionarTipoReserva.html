@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/seleccionarTipoReserva.css">
+    <title>Reservar Aula</title>
+</head>
+<body>
+
+    <!-- Cabecera -->
+
+    <header class="header">
+        <div class="menu-ul">
+            <button class="btn" type="button" onclick="location.href='/bedel'">Inicio</button>
+            <button class="btn" type="button">Registrar Reserva</button>
+            <button class="btn" type="button" onclick="location.href='/bedel/aula/buscar'">Buscar aula</button>
+            <button class="btn" type="button" onclick="location.href='/bedel/reserva/buscar'">Mis Reservas</button>
+        </div>
+        <div class="usuario">
+            <img src="/img/USUARIO.png" alt="USUARIO" class="imagen-usuario">
+            <div class="nombre-usuario">
+                <p id="usuario-nombre"></p>
+            </div>
+        </div>
+    </header>
+
+    <div class="h1_titulo">
+        <h1>SELECCIONAR TIPO DE RESERVA</h1>
+    </div>
+    <div class="container">
+        <div class="botones-reserva">
+            <button class="boton-seleccion" type="button" id="Periódica" onclick="location.href='/bedel/reserva/crear/reservaPeriodica'">Periodica</button>
+            <button class="boton-seleccion" type="button" id="Esporadica" onclick="location.href='/bedel/reserva/crear/reservaEsporadica'">Esporadica</button>
+        </div>
+
+        <div class="linea-vertical"></div>
+        <div></div>
+        <div class="espacio"></div>
+    </div>
+    <p class="btn-container">
+        <button class="btn-cancelar" type="button" id="cancelar" onclick="location.href='/bedel'">Cancelar</button>
+    </p>
+
+    <script src="/js/seleccionarTipoReserva.js"></script>
+</body>
+</html>
+

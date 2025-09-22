@@ -1,0 +1,189 @@
+/* ENCABEZADO */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #000000 2px solid;
+}
+
+.menu-ul {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0; 
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+}
+.imagen-usuario {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.nombre-usuario {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #3f3d3d;
+}
+
+/* Estilos para los botones del menú */
+.menu-ul .btn {
+    display: inline-block; 
+    padding: 0.5em 1em; 
+    margin: 0 0; 
+    font-size: 1rem; 
+    background-color: #ffffff; 
+    border-color: #000;
+    cursor: pointer; 
+    text-align: center; 
+    white-space: nowrap; 
+    border-radius: 2px;   
+}
+
+.menu-ul .btn:hover {
+    background-color: #9ac7ec;
+    border: 2px solid #6096c2;
+}
+
+/* ^ENCABEZADO ^*/
+
+body {
+    height: 100%; 
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #ffffff; 
+}
+
+input, select {
+    background-color: #e7e3e3; 
+    width: 408px; 
+    height: 40px; 
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #000000; 
+    margin-top: 10px;  
+    padding-left: 10px;
+    margin-bottom: 20px; 
+}
+
+.container {
+    display: flex;
+    justify-content: center;     /* Centra el contenido verticalmente */
+    align-items: center;         /* Centra el contenido horizontalmente */
+    width: 70%; /* ancho */
+    padding-top: px;
+    margin: 0 auto;
+    position: relative;
+    gap: 200px
+}
+.campos-no-habilitados{
+    opacity: 30%;
+}
+.linea-vertical {
+    width: 2px;
+    height: 400px;
+    background-color: #000000;
+    justify-self: center;
+}
+.espacio{
+    width: 200px;
+}
+.radio-button input{
+    width: 30px;
+    height: 20px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.dias-agregado {
+    width: 100%; /* Ocupa el ancho completo del contenedor */
+    border-collapse: collapse; /* Elimina los espacios entre los bordes */
+    margin: 20px 0; /* Espaciado arriba y abajo */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    text-align: left;
+}
+.dias-agregado td th {
+    border: 1px solid #ccc; /* Borde suave */
+    padding: 10px; /* Espaciado interno */
+}
+.dias-agregado th {
+    background-color: #f4f4f4; /* Fondo claro */
+    color: #333; /* Texto oscuro */
+    font-weight: bold;
+}
+.dias-agregado td {
+    text-align: center;
+}
+.botones-reserva {
+    display: flex;                 /* Activamos el modelo Flexbox */
+    flex-direction: column;        /* Coloca los botones en una columna (uno encima del otro) */
+    align-items: center;           /* Centra los botones horizontalmente dentro del contenedor */
+    gap: 20px;                     /* Espacio entre los botones */
+    margin-top: 20px;              /* Espacio superior para el contenedor, si es necesario */
+    
+}
+.botones-reserva button a{
+    text-decoration: none;
+    color: #000;
+}
+.fechas-reservas{
+    width: 300px;
+    height: 500px;
+}
+.btn-guardar{
+    display: none;
+}
+.btn-container{
+    display: flex;
+    justify-content: end;
+}
+
+.btn-container button a {
+    text-decoration: none;
+    color: #000;
+}
+
+.boton-seleccion {
+    width: 200px;
+    height: 40px;
+    border: 2px solid #000;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-radius: 5px;	
+}
+
+.boton-seleccion:hover {
+    background-color: #9ac7ec;
+    border: 2px solid #6096c2;
+}
+
+.h1_titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.btn-cancelar{
+    height: 40px;
+    width: 120px; 
+    border-radius: 5px;  
+    margin-bottom: 20px; 
+    margin-top: 10px; 	
+    text-transform: uppercase;
+	background-color: #dd4343; 
+	border-color: #ad3535; 
+    border-style: solid; 
+    cursor: pointer;
+}
+.btn-cancelar:hover{
+    background-color: #ad3535;
+}

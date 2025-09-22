@@ -1,0 +1,380 @@
+/* ENCABEZADO */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #000000 2px solid;
+}
+
+.menu-ul {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0; 
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+}
+
+.imagen-usuario {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.nombre-usuario {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #3f3d3d;
+}
+
+/* Estilos para los botones del menú */
+.menu-ul .btn {
+    display: inline-block; 
+    padding: 0.5em 1em; 
+    margin: 0 0; 
+    font-size: 1rem; 
+    background-color: #ffffff; 
+    border-color: #000;
+    cursor: pointer; 
+    text-align: center; 
+    white-space: nowrap; 
+    border-radius: 2px;   
+}
+
+.menu-ul .btn:hover {
+    background-color: #9ac7ec;
+    border: 2px solid #6096c2;
+}
+
+/* ^ENCABEZADO ^*/
+.h1_titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+body {
+    height: 100%; 
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #ffffff; 
+}
+input, select {
+    background-color: #e7e3e3; 
+    width: 408px; 
+    height: 40px; 
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #000000; 
+    margin-top: 10px;  
+    padding-left: 10px;
+    margin-bottom: 20px; 
+}
+
+.container {
+    display: flex;
+    justify-content: center;     /* Centra el contenido verticalmente */
+    align-items: center;         /* Centra el contenido horizontalmente */
+    width: 70%; /* ancho */
+    padding-top: px;
+    margin: 0 auto;
+    position: relative;
+    gap: 200px
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.linea-vertical {
+    width: 2px;
+    height: 400px;
+    background-color: #000000;
+    justify-self: center;
+}
+
+.dias-agregado {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin: 20px 0; 
+    font-family: Arial, sans-serif;
+}
+.dias-agregado td th {
+    border: 1px solid #ddd; 
+    padding: 8px; 
+    text-align: center;
+}
+.dias-agregado th {
+    background-color: #f2f2f2; 
+    color: #333; 
+    font-weight: bold;
+    text-align: center;
+}
+.dias-agregado td {
+    text-align: center;
+}
+
+.dias-agregado{
+    width: 500px;
+    height: 200px;
+}
+
+.radio-button input{
+    width: 30px;
+    height: 20px;
+}
+.btn-container{
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+.btn-cancelar{
+    text-decoration: none;
+    color: #000000;
+}
+.fechas-reservas{
+    width: 500px;
+    height: 500px;
+}
+.fechas-reservas p input {
+    width: 100px;
+    height: 50px;
+}
+.fechas-reservas select {
+    margin-top: 25px;
+    width: 100px;
+    height: 50px;
+}
+.sub-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.sub-container p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dias-agregado{
+    margin-top: 100px;
+    width: 600px;
+    height: 100px;
+}
+.agregar-dia{
+    margin-left: 400px;
+}
+
+.btn-cancelar{
+    height: 40px;
+    width: 120px; 
+    border-radius: 5px;  
+    margin-bottom: 20px; 
+    margin-top: 10px; 	
+    text-transform: uppercase;
+	background-color: #dd4343; 
+	border-color: #ad3535; 
+    border-style: solid; 
+    cursor: pointer;
+}
+.btn-cancelar:hover{
+    background-color: #ad3535;
+}
+
+.btn-buscar{
+    height: 40px;
+    width: 120px; 
+    border-radius: 5px;  
+    margin-bottom: 20px; 
+    margin-top: 10px; 	
+    text-transform: uppercase;
+    background-color: #007bff;
+    border-color:#0056b3;
+    border-style: solid; 
+    cursor: pointer;
+}
+.btn-buscar:hover {
+    background-color: #0056b3;
+}
+
+.btn-aceptar {
+    display: none;
+    background-color: #4CAF50;
+    border-color:#45a049;
+    height: 40px;
+    width: 120px; 
+    border-radius: 5px;  
+    margin-bottom: 20px; 
+    margin-top: 10px; 	
+    text-transform: uppercase;
+    border-style: solid; 
+    cursor: pointer;
+}
+
+.btn-aceptar:hover {
+    background-color: #45a049; 
+}
+
+/* MODALES y BOTONES DE TABLA */
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+    display: none;
+}
+
+.contenidoModal {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.modal-conteiner-boton{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.resultado-modal-conteiner-boton{
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+.cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-aceptar-modal {
+    background-color: #acec58;  
+    color: white;  
+    border: none;  
+    padding: 10px 20px;  
+    border-radius: 5px;  
+    cursor: pointer;  
+}
+.btn-aceptar-modal:hover {
+    background-color: #93ca4a; 
+}
+
+.btn-cancelar-modal {
+    background-color: #dd4343;
+    border-color: #ad3535;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-cancelar-modal:hover{
+    background-color: #ad3535;
+}
+
+.btn-disponibilidad-tabla {
+    display: none;
+    background-color: #007bff;
+    border-color:#0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-disponibilidad-tabla:hover{
+    background-color: #0056b3;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones */
+    justify-content: center; /* Centrar los botones horizontalmente */
+}
+
+
+/* Estilos para el contenedor de aulas candidatas */
+#aula-info {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    justify-content: space-around;
+}
+
+/* Estilos para los divs de aulas candidatas */
+.aula-candidata {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    background-color: #f9f9f9; /* Fondo claro */
+    width: calc(30% - 10px); /* Ancho del 30% menos márgenes */
+}
+
+/* Estilos para los botones de seleccionar aula */
+.btn-seleccionar-aula {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px; /* Espacio superior */
+}
+
+.btn-seleccionar-aula:hover {
+    background-color: #45a049; /* Verde más oscuro al pasar el ratón */
+}
+
+
+.btn-aceptar-modal-resultado-exito{
+    background-color: #acec58;
+    border-color: #93ca4a;  
+    color: white;  
+    border: none;  
+    padding: 10px 20px;  
+    border-radius: 5px;  
+    cursor: pointer;  
+}
+.btn-aceptar-modal-resultado-exito:hover {
+    background-color: #93ca4a; 
+}
+
+.btn-aceptar-modal-resultado-error{
+    background-color: #dd4343;
+    border-color: #ad3535;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-aceptar-modal-resultado-error:hover{
+    background-color: #ad3535;
+}

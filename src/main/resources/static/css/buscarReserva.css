@@ -1,0 +1,270 @@
+body {
+    height: 100%; 
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #ffffff; 
+}
+
+input, select {
+    background-color: #e7e3e3; 
+    width: 300px; 
+    height: 40px; 
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #000000; 
+    margin-top: 10px;  
+    padding-left: 10px;
+    margin-bottom: 20px; 
+}
+
+h2 {
+    text-align: center;
+}
+
+/* ENCABEZADO */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #000000 2px solid;
+}
+
+.menu-ul {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0; 
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+}
+.imagen-usuario {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.nombre-usuario {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #3f3d3d;
+}
+
+/* Estilos para los botones del menú */
+.menu-ul .btn {
+    display: inline-block; 
+    padding: 0.5em 1em; 
+    margin: 0 0; 
+    font-size: 1rem; 
+    background-color: #ffffff; 
+    border-color: #000;
+    cursor: pointer; 
+    text-align: center; 
+    white-space: nowrap; 
+    border-radius: 2px;   
+}
+
+.menu-ul .btn:hover {
+    background-color: #9ac7ec;
+    border: 2px solid #6096c2;
+}
+
+/* ^ENCABEZADO ^*/
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.h1-titulo {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Formulario de búsqueda */
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    width: 100%;
+}
+
+.boton-buscar {
+    height: 40px;
+    width: 150px; 
+    border-radius: 5px;  
+    margin-top: 10px; 
+    text-transform: uppercase;
+    background-color: #9ac7ec; 
+    border-color: #6096c2; 
+    border-style: solid; 
+    cursor: pointer;
+}
+.boton-buscar:hover {
+    background-color: #6096c2;
+}
+
+/* Listado de reservas */
+#reserva-list {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+
+/* Elemento de Reserva */
+.reserva-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Estado activo/deshabilitado */
+.reserva-item.active {
+    background-color: lightgreen;
+}
+
+.reserva-item.disabled {
+    background-color: lightyellow;
+}
+
+/* Información de la Reserva */
+.reserva-item span {
+    flex-grow: 1;
+    margin-left: 10px;
+    text-align: left;
+    color: #333;
+}
+
+/* Contenedor de botones */
+.reserva-item .button-group {
+    display: flex;
+    gap: 15px;
+}
+
+/* Botones */
+.ver-btn, .modificar-btn, .eliminar-btn {
+    width: 80px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.ver-btn {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.modificar-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.eliminar-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.ver-btn:hover {
+    background-color: #138496;
+}
+
+.modificar-btn:hover {
+    background-color: #0056b3;
+}
+
+.eliminar-btn:hover {
+    background-color: #a71d2a;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-aceptar {
+    background-color: #4CAF50;  
+    color: white;  
+    border: none;  
+    padding: 10px 20px;  
+    border-radius: 5px;  
+    cursor: pointer;  
+}
+
+.btn-aceptar:hover {
+    background-color: #45a049; 
+}
+
+.btn-cancelar {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-cancelar:hover {
+    background-color: #e53935;
+}

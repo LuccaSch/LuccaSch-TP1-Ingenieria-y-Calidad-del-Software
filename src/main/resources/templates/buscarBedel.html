@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/buscarBedel.css">
+    <title>Buscar Bedel</title>
+</head>
+<body>
+
+    <!-- Cabecera -->
+
+    <header class="header">
+        <div class="menu-ul">
+            <button class="btn" type="button" onclick="location.href='/admin'">Inicio</button>
+            <button class="btn" type="button">Buscar Bedel</button>
+            <button class="btn" type="button" onclick="location.href='/admin/registrarBedel'">Registrar Bedel</button>
+        </div>
+        <div class="usuario">
+            <img src="/img/USUARIO.png" alt="USUARIO" class="imagen-usuario">
+            <div class="nombre-usuario">
+                <p id="usuario-nombre"></p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Busqueda de bedels-->
+    <div class="h1-titulo">
+        <h1>BUSCAR BEDEL</h1>
+    </div>
+
+    <div class="container">
+        <p>
+            <label for="valor_busqueda" class="buscar_bedel_filtro">Valor de búsqueda:</label>
+            <input type="text" name="valor_de_busqueda" id="valor_busqueda">
+        </p>
+        <p>
+            <label for="filtro" class="Filtro">Como buscar:</label>
+            <select name="select" id="filtro">
+                <option value="0" selected>Seleccion de búsqueda</option>
+                <option value="1">Usuario</option>
+                <option value="2">Nombre</option>
+                <option value="3">Apellido</option>
+                <option value="4">Turno</option>
+            </select>
+        </p>
+    </div>
+    
+    <div id="mensajeError" class="mensaje-error" style="color: red;"></div>
+
+    <button class="boton-buscar" type="button" id="buscar">Buscar</button>
+    
+    <div id="bedel-list">
+         <!-- esta lista se llena dinámicamente desde JS -->
+    </div>
+    
+    
+
+
+    <!-- Modal de modificar bedel-->
+     
+    <div id="modal-modificar" class="modal">
+        <div class="contenidoModal">
+            <span class="cerrar" id="close-button-modificar">&times;</span>
+            <h2 id="modal-title-modificar">Modificar Bedel</h2>
+            <form id="bedel-form">
+                <input type="hidden" id="bedel-id" name="bedelId">
+                <p>
+                    <label for="bedel-usuario">Usuario:</label>
+                    <input type="text" id="bedel-modificar-usuario" name="usuario" readonly>
+                </p>
+                <p>
+                    <label for="bedel-nombre">Nombre:</label>
+                    <input type="text" id="bedel-modificar-nombre" name="nombre" placeholder="">
+                </p>
+                <p>
+                    <label for="bedel-apellido">Apellido:</label>
+                    <input type="text" id="bedel-modificar-apellido" name="apellido" placeholder="">
+                </p>
+                <p>
+                    <label for="bedel-contrasenia">Contrasenia:</label>
+                    <input type="text" id="bedel-modificar-contrasenia" name="bedel-contrasenia" placeholder="************">
+                </p>
+                <p>
+                    <label for="bedel-confcontrasenia">Repita la Contrasenia:</label>
+                    <input type="text" id="bedel-modificar-confContrasenia" name="bedel-conf-contrasenia" placeholder="************">
+                </p>
+                <p>
+                    <label for="bedel-turno">Turno:</label>
+                    <input type="text" id="bedel-modificar-turno" name="turno" placeholder="">
+                </p>
+                <div class="modal-conteiner-boton">
+                    <button type="button" class="btn-aceptar-modal" id="save-modificar-button">Guardar</button>
+                    <button type="button" class="btn-cancelar-modal" id="cancel-modificar-button">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Eliminar bedel-->
+
+    <div id="modal-eliminar" class="modal">
+        <div class="contenidoModal">
+            <span class="cerrar" id="close-button-eliminar">&times;</span>
+            <h2 id="modal-title-eliminar">Eliminar/Activar Bedel</h2>
+            <input type="hidden" id="bedel-id-eliminar" name="bedelId">
+            <input type="hidden" id="bedel-estado" name="bedelEstado">
+            <div id="bedel-info">
+                <p><strong>Usuario:</strong> <span id="bedel-eliminar-usuario"></span></p>
+                <p><strong>Nombre:</strong> <span id="bedel-eliminar-nombre"></span></p>
+                <p><strong>Apellido:</strong> <span id="bedel-eliminar-apellido"></span></p>
+                <p><strong>Turno:</strong> <span id="bedel-eliminar-turno"></span></p>
+            </div>
+            <div class="modal-conteiner-boton">
+                <button type="button" class="btn-aceptar-modal" id="save-delete-button">Guardar</button>
+                <button type="button" class="btn-cancelar-modal" id="cancel-delete-button">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para mostrar el resultado de la operacion -->
+    <div id="resultadoModal" class="modal">
+        <div class="contenidoModal">
+            <span  class="cerrar" id="close-button-resultado" style="cursor:pointer;">&times;</span>
+            <h2 id="resultadoMensaje"></h2>
+            <div class="resultado-modal-conteiner-boton">
+                <button class="btn-aceptar-modal" id="aceptarBtn" >Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- script-->
+    <script src="/js/buscarBedel.js"></script>
+</body>
+</html>

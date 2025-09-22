@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/registrarBedel.css">
+    <title>Registrar Bedel</title>
+</head>
+<body>
+    <!-- Cabecera -->
+    <header class="header">
+        <div class="menu-ul">
+            <button class="btn" type="button" onclick="location.href='/admin'">Inicio</button>
+            <button class="btn" type="button" onclick="location.href='/admin/buscarBedel'">Buscar Bedel</button>
+            <button class="btn" type="button">Registrar Bedel</button>
+        </div>
+        <div class="usuario">
+            <img src="/img/USUARIO.png" alt="USUARIO" class="imagen-usuario">
+            <div class="nombre-usuario">
+                <p id="usuario-nombre"></p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Registro Bedel -->
+    <div class="h1_bedel">
+        <h1>REGISTRAR BEDEL</h1>
+    </div>
+    
+    <div class="container">
+        <p>
+            <label for="nombre" class="colocar_nombre">*Nombre</label>
+            <input type="text" name="introducir_nombre" id="nombre" required placeholder="Escribe su nombre">
+        </p>
+        <p>
+            <label for="apellido*" class="colocar_nombre">*Apellido:</label>
+            <input type="text" name="introducir_apellido" id="apellido" required placeholder="Escribe su apellido">
+        </p>
+        <p>
+            <label for="usuario*" class="colocar_usuario">*Usuario:</label>
+            <input type="text" name="introducir_usuario" id="usuario" required placeholder="Usuario">
+        </p>
+        <p>
+            <label for="pass*" class="colocar_contraseña">*Contraseña:</label>
+            <input type="password" name="introducir_contraseña" id="contrasenia" required placeholder="Contraseña">
+        </p>
+        <p>
+            <label for="conf_pass*" class="colocar_confirmacion">*Confirmar contraseña:</label>
+            <input type="password" name="introducir_confirmacion" id="confContrasenia" required placeholder="Confirmar contraseña">
+        </p>
+        <p>
+            <label for="email*" class="colocar_mail">*E-mail:</label>
+            <input type="email" name="introducir_email" id="email" required placeholder="xxxxxxxx@example.com">
+        </p>
+        <p>
+            <label for="turno*" class="colocar_turno">*Turno:</label>
+            <select name="select" id="turno" required>
+                <option value="" selected disabled>Selecciona un turno</option>
+                <option value="Turno1">Turno 1</option>
+                <option value="Turno2">Turno 2</option>
+            </select>
+        </p>
+        <p class="aviso">
+            <span>*</span> Campos obligatorios.
+        </p>
+    </div>
+
+    <!-- Mensaje Error -->
+    
+    <div id="mensajeError" class="mensaje-error" style="color: red;"></div>
+
+    <!-- Botones -->
+    <div class="botones-acep-cancel">
+        <button class="btn-cancelar" type="button" id="cancelar" onclick="location.href='/admin'">Cancelar</button>
+        <button class="btn-aceptar" type="button" id="registrar" onclick="registrarBedel()">Registrar</button>
+    </div>
+    
+    <!-- Modal para mostrar el resultado de la operacion -->
+    <div id="resultadoModal" class="modal" style="display: none;">
+        <div class="contenidoModal">
+            <span id="cerrarModal" class="cerrar" style="cursor:pointer;">&times;</span>
+            <h2 id="resultadoMensaje"></h2>
+            <div class="modal-conteiner-boton">
+                <button class="btn-aceptar-modal-exito" id="aceptarBtn" >Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/registrarBedel.js" defer></script>  
+</body>
+</html>

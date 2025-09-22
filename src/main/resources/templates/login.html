@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Iniciar Sesión</title>
+</head>
+<body>
+    <div class="login-container">
+        <img src="/img/UTN_logo_public.png" alt="UTN Logo" class="logo">
+        <h2>Iniciar Sesión</h2>
+        <form action="/login" method="post">
+            <input type="text" name="username" placeholder="Usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <button type="submit">Ingresar</button>
+            <div class="error-message" th:if="${param.error}">
+                <p>Usuario o contraseña incorrectos, intenta de nuevo.</p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

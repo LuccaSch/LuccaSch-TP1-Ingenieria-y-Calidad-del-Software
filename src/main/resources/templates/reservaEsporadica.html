@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reservaEsporadica.css">
+    <title>Reserva Esporadica</title>
+</head>
+<body>
+    <header class="header">
+        <div class="menu-ul">
+            <button class="btn" type="button" onclick="location.href='/bedel'">Inicio</button>
+            <button class="btn" type="button" onclick="location.href='/bedel/reserva/crear'">Registrar Reserva</button>
+            <button class="btn" type="button" onclick="location.href='/bedel/aula/buscar'">Buscar aula</button>
+            <button class="btn" type="button" onclick="location.href='/bedel/reserva/buscar'">Mis Reservas</button>
+        </div>
+        <div class="usuario">
+            <img src="/img/USUARIO.png" alt="USUARIO" class="imagen-usuario">
+            <div class="nombre-usuario">
+                <p id="usuario-nombre">Nombre_de_Usuario</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="h1_titulo">
+        <h1>REGISTRAR RESERVA ESPORADICA</h1>
+    </div>
+
+    <div class="container">
+        <div class="fechas-reservas">
+            <div class="sub-container" id="fechas-reservas-sub-container">
+                <p>
+                    <label for="fecha">Selecciona una fecha:</label>
+                    <input type="date" id="fecha-id" name="fecha" class="date-dia">
+                </p>
+                <p>
+                    <label for="hora">Hora Inicio:</label>
+                    <input type="time" id="hora-inicio-id" name="hora" placeholder="HH:MM">
+                </p>
+                <p>
+                    <label for="hora">Duracion:</label>
+                    <input type="number" id="duracion-id" name="hora" placeholder="MMM">
+                </p>
+            </div>
+            <div id="mensaje-error-diaReserva" class="mensaje-error" style="color: red;"></div>
+            <button class="btn-buscar" id="btn-agregar-dia">Agregar Dia</button>
+            <div>
+                <table class="dias-agregado" id="dias-agregados">
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Hora Inicio</th>
+                        <th>Duracion</th>
+                        <th>Aula</th>
+                        <th>Acciones</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="linea-vertical"></div>
+
+        <div class="campos-no-habilitados", id="campos-reserva">
+            <p>
+                <label for="CantidadAlumnos*" class="colocar_cantidad">*CantidadAlumnos</label>
+                <input type="text" name="introducir_cantidad" id="alumnos-tam" required placeholder="Ingrese la cantidad">
+            </p>
+            <p>
+                <label for="docente*" class="colocar_docente">*Docente Solicitante:</label>
+                <select name="select" id="docente" required>
+                    <option value="" selected disabled>Seleccione el docente</option>
+                </select>
+            </p>
+                <p>
+                    <label for="catedra*" class="colocar_catedra">*</label>
+                    <select name="select" id="catedra" required>
+                        <option value="" selected disabled>Seleccione la catedra</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="tipo-aula*" class="colocar_tipo">*Tipo de Aula:</label>
+                    <select name="select" id="turno" required>
+                        <option value="" selected disabled>Seleccione el Tipo de Aula</option>
+                        <option value="0">Informatica</option>
+                        <option value="1">Multimedia</option>
+                        <option value="2">Sin Recursos</option>
+                    </select>
+                </p>
+                
+                <p class="aviso">
+                    <span>*</span> Campos obligatorios.
+                </p>
+                <div id="mensaje-error-reserva" class="mensaje-error" style="color: red;"></div>
+                <p class="btn-container">
+                    <button class="btn-cancelar" type="button" id="cancelar">Cancelar</button>
+                    <button class="btn-aceptar" type="button" id="crearReserva">Reservar</button>
+                    <button class="btn-buscar" type="button" id="buscar">Buscar</button>
+                </p>
+        </div>
+    </div>
+
+    <!-- MODALES -->
+
+    <div id="modal-aulas" class="modal">
+        <div class="contenidoModal">
+            <span class="cerrar" id="close-button-aula">&times;</span>
+            <h2>Seleccione el Aula</h2>
+            <div id="aula-info">
+                <!-- Se llena dinamicamente en js -->
+            </div>
+            <div class="modal-buttons">
+                <button type="button" class="btn-cancelar-modal" id="cancel-aula-button">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-superposicion" class="modal">
+        <div class="contenidoModal">
+            <span class="cerrar" id="close-button-superposicion">&times;</span>
+            <h2>Menor Superposicion</h2>
+            <div id="Superposicion-info">
+                <p><strong>ID Reserva:</strong> <span id="reserva-id-modal-sup"></span></p>
+                <p><strong>ID Asignatura:</strong> <span id="asignatura-id-modal-sup"></span></p>
+                <p><strong>Asignatura</strong> <span id="asignatura-modal-sup"></span></p>
+                <p><strong>ID Docente</strong> <span id="docente-id-modal-sup"></span></p>
+                <p><strong>Docente</strong> <span id="docente-modal-sup"></span></p>
+                <p><strong>Tipo</strong> <span id="tipo-asignatura-modal-sup"></span></p>
+                <p><strong>ID Bedel</strong> <span id="bedel-modal-sup"></span></p>                                                            
+            </div>
+            <div class="modal-buttons">
+                <button type="button" class="btn-cancelar-modal" id="save-superposicion-button">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para mostrar el resultado de la operacion -->
+    <div id="resultadoModal" class="modal">
+        <div class="contenidoModal">
+            <span  class="cerrar" id="close-button-resultado" style="cursor:pointer;">&times;</span>
+            <h2 id="resultadoMensaje"></h2>
+            <div class="resultado-modal-conteiner-boton">
+                <button class="btn-aceptar-modal" id="aceptar-resultado-modal" >Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/reservaEsporadica.js"></script>   
+</body>
+</html>

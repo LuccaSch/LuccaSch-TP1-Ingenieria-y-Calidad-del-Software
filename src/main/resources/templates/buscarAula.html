@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/buscarReserva.css">
+    <title>Buscar Bedel</title>
+</head>
+<body>
+
+    <!-- Cabecera -->
+
+    <header class="header">
+        <div class="menu-ul">
+            <button class="btn" type="button" onclick="location.href='/bedel'">Inicio</button>
+            <button class="btn" type="button" onclick="location.href='/bedel/reserva/crear'">Registrar Reserva</button>
+            <button class="btn" type="button">Buscar aula</button>
+            <button class="btn" type="button" onclick="location.href='/bedel/reserva/buscar'">Mis Reservas</button>
+        </div>
+        <div class="usuario">
+            <img src="/img/USUARIO.png" alt="USUARIO" class="imagen-usuario">
+            <div class="nombre-usuario">
+                <p id="usuario-nombre">Nombre_de_Usuario</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Busqueda de bedels-->
+    <div class="h1-titulo">
+        <h1>Buscar Aula</h1>
+    </div>
+    
+    <div id="reserva-list">
+        <h2>AVISO:LA FUNCIONALIDAD DE "BUSCAR AULA" NO ESTA IMPLEMENTADA AUN</h2>
+    </div>
+    
+    <div id="mensajeError" class="mensaje-error" style="color: red;"></div>
+
+    <!-- Modal de imprimir reserva-->
+    <div id="modal-imprimir" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-button-imprimir">&times;</span>
+            <h2 id="modal-title-imprimir">Imprimir Reservas</h2>
+            <input type="hidden" id="reserva-id-imprimir" name="imprimir-reserva">
+            <div id="reservas-info-imprimir">
+                <!-- esta lista se llena dinámicamente con las reservas seleccionadas para imprimir desde JS-->
+           </div>
+            <div class="modal-buttons">
+                <button type="button" class="btn-imprimir" id="save-imprimir-button">Imprimir</button>
+                <button type="button" class="btn-cancelar" id="cancel-imprimir-button">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Eliminar Reserva-->
+
+    <div id="modal-eliminar" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-button-eliminar">&times;</span>
+            <h2 id="modal-title-eliminar">Eliminar/Activar Bedel</h2>
+            <input type="hidden" id="bedel-id-eliminar" name="bedelId">
+            <input type="hidden" id="bedel-estado" name="bedelEstado">
+            <div id="reservas-info-eliminar">
+                <!-- esta lista se llena dinámicamente con las reservas seleccionadas para eliminar desde JS-->
+           </div>
+            <div class="modal-buttons">
+                <button type="button" class="btn-aceptar" id="save-delete-button">Guardar</button>
+                <button type="button" class="btn-cancelar" id="cancel-delete-button">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para mostrar el resultado de la operacion -->
+    <div id="resultadoModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span id="close-button-resultado" class="close-button" style="cursor:pointer;">&times;</span>
+            <h2 id="resultadoMensaje"></h2>
+            <button class="btn-aceptar" id="aceptarBtn" >Aceptar</button>
+        </div>
+    </div>
+
+    <!-- script-->
+    <script src="/js/buscarReserva.js"></script>
+</body>
+</html>
